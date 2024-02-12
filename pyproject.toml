@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ansible-role-borgbackup"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+ansible = "^9.2.0"
+ansible-lint = { version = "^24.2.0", markers = "platform_system != 'Windows'" }
+molecule = "^24.2.0"
+molecule-plugins = {extras = ["docker"], version = "^23.5.3"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
