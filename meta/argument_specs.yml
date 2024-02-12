@@ -52,16 +52,16 @@ argument_specs:
         default: root
         description: Name of the Group to create Backups (Service Account). When using Docker, must be root.
       borg_source_directories:
-        type: List
+        type: list
         default: "/etc/hostname"
         required: false
-        description: List of local folders to back up.
+        description: list of local folders to back up.
       borg_one_file_system:
         type: str
         required: false
         description: Don't cross file-system boundaries.
       borg_repository:
-        type: List
+        type: list
         required: true
         description: |
           Full path to repository.
@@ -77,11 +77,11 @@ argument_specs:
         required: false
         description: Store ctime into archive.
       borg_exclude_patterns:
-        type: List
+        type: list
         required: false
         description: Any paths matching these patterns are excluded from backups. Globs and tildes are expanded.
       borg_exclude_from:
-        type: List
+        type: list
         required: false
         description: Read exclude patterns from one or more separate named files, one pattern per line.
       borg_remote_path:
@@ -150,7 +150,7 @@ argument_specs:
           required: false
           description: Number of yearly archives to keep.
       borgmatic_checks:
-        type: List
+        type: list
         required: false
         description: |
           List of one or more consistency checks to run
