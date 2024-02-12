@@ -68,7 +68,7 @@
 
   - name: Modify borg_repository to reflect path in container
     ansible.builtin.set_fact:
-      borg_repository: >-
+      borg_repository_tmp: >-
         {%- set repositories = [] -%}
         {%- for repo in borg_repository -%}
         {%-   if repo[0] == "/" -%}
@@ -79,6 +79,10 @@
         {%- endfor -%}
         {{ repositories }}
       borg_repository_flat: "{{ borg_repository | join('|') }}"
+
+  - name: Overwrite borg_repository fact
+    ansible.builtin.set_fact:
+      borg_repository: "{{ borg_repository_tmp }}"
 
   - name: Check if ssh repo in the list
     when:
